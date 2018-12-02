@@ -1,0 +1,14 @@
+my_list = [4, 3, 99, 222]
+
+# iterator = iter(iterable)
+# item = next(iterator)
+
+my_iterator = iter(my_list)
+my_list_item = next(my_iterator)
+# 4
+my_list_item = next(my_iterator)
+# 3
+my_list_item = next(my_iterator)
+# 99
+my_list_item = next(my_iterator)
+# 22
