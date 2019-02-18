@@ -1,10 +1,10 @@
-#TUPLE - immutalbe sequence of arbitrary object
+#TUPLE - immutalbe ordered sequence of arbitrary object
 
 t = ('Norway', 3.14, 5)
 print(t)
 # ('Norway', 3.14, 5)
 
-t[0]
+t[0]            # <-- this is how an item in a tuple can be accessed
 # 'Norway'
 
 len(t)
@@ -16,6 +16,12 @@ for item in t:
 # Norway
 # 3.14
 # 5
+
+t.count(5)      # <-- param required (how many times 5 is met in the t tuple)
+#1
+
+t.indexOf(5)    # <-- raises exeption if 5 is not in the tuple
+#2
 
 # concatenate tuples
 t + ("pesho", 999)
