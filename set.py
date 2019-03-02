@@ -32,7 +32,8 @@ s.clear()                   # empty a set
 del s                       # delete completely
 
 
-# Iterate
+# Iterate (!!! set does NOT support .keys(), .values(), .items())
+# enumerate() yields tuples (index, value)
 for x in {1, 2, 7, 99}:     # <-- iterable, but order is arbitrary
     print(x)
 # 1 // 2 // 99 // 7
