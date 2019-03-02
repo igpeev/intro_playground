@@ -32,11 +32,15 @@ s.clear()                   # empty a set
 del s                       # delete completely
 
 
-# Iterate (!!! set does NOT support .keys(), .values(), .items())
+# Iterate (!!! SET does NOT support .keys(), .values(), .items())
 # enumerate() yields tuples (index, value)
 for x in {1, 2, 7, 99}:     # <-- iterable, but order is arbitrary
     print(x)
 # 1 // 2 // 99 // 7
+
+for k,v in enumerate({1, 2, 7, 99}):
+    print(k,v)
+# 0 1 // 1 2 // 2 99 // 3 7
 
 
 # SET specific operations
