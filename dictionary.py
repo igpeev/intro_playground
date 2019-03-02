@@ -1,66 +1,73 @@
 # Dictionary - unordered key: value pairs, comma separated, keys unique (roughly javascript equivalent of object)
 
-person = {'name': 'Peter', 'age': 33}
+d = {'name': 'Peter', 'age': 33}
 {'name': 'Peter', 'age': 33}
 
-person['name']
+d['name']
 # 'Peter'
 
-# Make a dictionary (obj) from tuples array
-person_tuples_array = [('name', 'Peter'), ('age', 33)]
-d = dict(person_tuples_array)
-d
+
+# Make a dictionary (obj) from tuples list
+person_tuples_list = [('name', 'Peter'), ('age', 33)]
+d = dict(person_tuples_list)
 # {'name': 'Peter', 'age': 33}
-p = dict(name='Peter', age=33)
-p
+
+#dictionary from dict Ctor
+d = dict(name='Peter', age=33)
 {'name': 'Peter', 'age': 33}
 
+
 # to copy a dictionary - SHALLOW !!!
-new_dict = p.copy()
-new_dict = dict(p)
-new_dict.update(p)
+new_dict = d.copy()
+new_dict = dict(d)
+
 
 # extend a dictionary (javascript equivalent to Object.assign or {...p, ...q}
-p.update({'enrolled': True})    # { ...p, ...{ enrolled: true } }
-p
-# {'name': 'Peter', 'age': 33, 'enrolled': True}
+d.update({'enrolled': 999})                # { ...p, ...{ enrolled: 999 } }
+new_dict = {**d, **{'enrolled': 999}}
+# {'name': 'Peter', 'age': 33, 'enrolled': 999}
+
 
 # iterate
-for key in p:
-    print('{} => {}'.format(key, p[key]))
-    # print('{key} => {val}'.format(key=key, val=p[key]))   # <-- same, but long-hand
+for key in d:
+    print('{} => {}'.format(key, d[key]))
+    print('{key} => {val}'.format(key=key, val=d[key]))   # <-- same, but long-hand
+# name = > Peter //  age = > 33 // enrolled = > 999
 
-# name = > Peter
-# age = > 33
-# enrolled = > True
-
-for key in p.keys():
+for key in d.keys():
     print(key)
-# name
-# age
-# enrolled
+# name // age  // enrolled
 
-for val in p.values():
+for val in d.values():
     print(val)
-# Peter
-# 33
-# True
+# Peter // 33 // 999
 
-for key, val in p.items():      # returns key:val tuples, so name the tuple vars (key, val) as you like most
+for key, val in d.items():          # returns key:val tuples list, so name the tuple vars (key, val) as you like most
     print(key, val)
+    # name Peter // age 33
+
+for key, val in enumerate(d):       # !!! note on dictionaries NOT ordered, [(name, Peter), (age, 33)]
+    print(key, val)
+    # 0 name // 1 age
+
+for idx, (key, val) in enumerate(d.items()):
+    # enumerate(list_of_key_val_tuples) => list_of_idx_(key_val_tuple)_tuples
+    # enumerate( [(name, Peter), (age, 33)] ) => [(0, (name, Peter)), (1, (age, 33))]
+    print(idx, key, val)
+    # 0 name Peter // 1 age 33
+
 
 # membership testing
-'age' in p
+'age' in d
 True
 
-'sex' in p
+'sex' in d
 False
 
 
-del p['enrolled']
-p
-{'name': 'Peter', 'age': 33}
+#shorten a dict
+d.pop('enrolled')                           # <-- Error if not present
+# 999
 
-del p['enrolled']   # <-- already deleted key (or missing key) => test first !!!
-# ERROR
-
+del d['enrolled']
+{'name': 'Peter', 'age': 33}                # <-- Error if not present
