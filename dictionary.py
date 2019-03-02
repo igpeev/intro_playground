@@ -16,10 +16,17 @@ d = dict(person_tuples_list)
 d = dict(name='Peter', age=33)
 {'name': 'Peter', 'age': 33}
 
-
 # to copy a dictionary - SHALLOW !!!
 new_dict = d.copy()
 new_dict = dict(d)
+
+
+# membership testing
+'age' in d
+True
+
+'sex' in d
+False
 
 
 # extend a dictionary (javascript equivalent to Object.assign or {...p, ...q}
@@ -27,8 +34,15 @@ d.update({'enrolled': 999})                # { ...p, ...{ enrolled: 999 } }
 new_dict = {**d, **{'enrolled': 999}}
 # {'name': 'Peter', 'age': 33, 'enrolled': 999}
 
+#shorten a dict
+d.pop('enrolled')                           # <-- Error if not present
+# 999
 
-# iterate
+del d['enrolled']
+{'name': 'Peter', 'age': 33}                # <-- Error if not present
+
+
+# Iterate
 for key in d:
     print('{} => {}'.format(key, d[key]))
     print('{key} => {val}'.format(key=key, val=d[key]))   # <-- same, but long-hand
@@ -55,19 +69,3 @@ for idx, (key, val) in enumerate(d.items()):
     # enumerate( [(name, Peter), (age, 33)] ) => [(0, (name, Peter)), (1, (age, 33))]
     print(idx, key, val)
     # 0 name Peter // 1 age 33
-
-
-# membership testing
-'age' in d
-True
-
-'sex' in d
-False
-
-
-#shorten a dict
-d.pop('enrolled')                           # <-- Error if not present
-# 999
-
-del d['enrolled']
-{'name': 'Peter', 'age': 33}                # <-- Error if not present
