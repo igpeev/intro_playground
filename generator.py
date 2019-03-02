@@ -23,3 +23,9 @@ for my_num in gen123():
 # 2
 # 3
 
+for i in range(20, 30, 3):
+    print(i)
+# 20
+# 23
+# 26
+# 29

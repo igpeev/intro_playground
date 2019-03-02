@@ -54,6 +54,12 @@ lower
 upper
 # 55
 
+t = (1, 2, 3)
+one, two, three = t
+one == 1 and two == 2 and three == 3
+# True
+
+
 # create tuple from other data structure ?
 tuple([33, 44, 55])     # from list (array)
 # (33, 44, 55)
