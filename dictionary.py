@@ -1,4 +1,4 @@
-# Dictionary - unordered key: value pairs, comma separated, keys unique (roughly javascript equivalent of object)
+# DICTIONARY - unordered key: value pairs, comma separated, keys unique (roughly javascript equivalent of object)
 
 d = {'name': 'Peter', 'age': 33}
 {'name': 'Peter', 'age': 33}

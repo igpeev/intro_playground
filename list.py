@@ -1,4 +1,4 @@
-# List - heterogenous mutable sequence
+# LIST - heterogeneous mutable sequence
 l = 'hello world hello people'.split()
 # ['hello', 'world', 'hello', 'people']
 

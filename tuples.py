@@ -1,4 +1,4 @@
-#TUPLE - immutalbe ordered sequence of arbitrary object
+# TUPLE - immutable ordered sequence of arbitrary object
 
 t = ('Norway', 3.14, 5)
 print(t)
