@@ -74,3 +74,12 @@ s.issubset(j)
 # BOOLEAN - no elems in common
 s.isdisjoint(j)
 # False
+
+
+# COOL :) NB: it's the sorted(...) that turns set into list !!!
+list_main = [5, 4, 3, 2, 1]
+list_other = [4, 5, 6, 7]
+list_main = sorted(list(set(list_main).difference(set(list_other))))
+list_main = sorted([num for num in list_main if num not in list_other])
+list_main = sorted(set(list_main) - set(list_other))
+# [1, 2, 3]
