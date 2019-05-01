@@ -120,3 +120,8 @@ res = list(new_reversed_list_2)
 l = [{'name': 'John', 'age': 33}, {'name': 'Peter', 'age': 20}, {'name': 'Rick', 'age': 42}]
 sorted(l, key = lambda person: person['age'])
 # [{'name': 'Peter', 'age': 20}, {'name': 'John', 'age': 33}, {'name': 'Rick', 'age': 42}]
+
+# find (FIRST occurrence)
+lst = [2, 4, 33, 11]
+target = next((x for x in lst if x > 10), None)
+# 33
