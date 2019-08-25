@@ -1,4 +1,6 @@
 # DECORATORS - if several used, processed in reverse order (i.e. lower first, top one last)
+# *** decorators and function declarations happen in compile-time,
+# *** so bound parameters CANNOT be changed at RUNTIME !!!
 
 
 # functions **************************************************************************
