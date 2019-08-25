@@ -38,6 +38,9 @@ new_dict = {**d, **{'enrolled': 999}}
 d.pop('enrolled')                           # <-- Error if not present
 # 999
 
+# clear all entries in the dict (takes no args)
+d.clear()                                   # <-- yields {}
+
 del d['enrolled']
 {'name': 'Peter', 'age': 33}                # <-- Error if not present
 
