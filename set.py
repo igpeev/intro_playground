@@ -27,6 +27,7 @@ s.remove(33)
 s.remove(33)                # <-- ERROR if missing
 s.discard(33)               # <-- remove OR no-error if missing
 s.pop()                     # <-- !!! takes out a RANDOM element (set is unordered), hence takes NO args
+len(s)                      # <-- how many items in the set
 #99
 s.clear()                   # empty a set
 del s                       # delete completely
@@ -44,7 +45,7 @@ for k,v in enumerate({1, 2, 7, 99}):
 
 
 # SET specific operations
-# All have an _update() variant, that changes the first set by removing the matching items (instead of returning them)
+# All have an _update() variant, that changes the first set by removing the matching items (instead of returning NEW set)
 s1 = {33, 18, 22}
 s2 = {11, 22, 33, 99}
 
@@ -58,6 +59,7 @@ s1.intersection(s2)
 
 # DIFFERENCE - not in the other ( NOT COMMUTATIVE)
 s1.difference(s2)
+s1 - s2   # same, shorthand
 # {18}
 s2.difference(s1)
 # {11, 99}
