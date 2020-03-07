@@ -88,3 +88,7 @@ for k, v in enumerate(t):
 # 0 Norway
 # 1 3.14
 # 2 True
+
+# Tuple comprehension
+(i for i in (1, 2, 3))          # <generator object <genexpr> at 0x1078...> !!! the () were already taken for generators
+tuple(i for i in (1, 2, 3))     # (1, 2, 3)

@@ -29,3 +29,17 @@ for i in range(20, 30, 3):
 # 23
 # 26
 # 29
+
+
+# generates infinite sequence
+def infinite_sequence():
+    num = 0
+    while True:
+        yield num
+        num += 1
+
+
+gen = infinite_sequence()
+next(gen)   # 0     # <-- no gen.next(), but next(gen) !!!
+next(gen)   # 1
+next(gen)   # 2
